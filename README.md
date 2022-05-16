@@ -1,1 +1,1 @@
-# Infinite-Scrolling
+# Practice_Assignment
