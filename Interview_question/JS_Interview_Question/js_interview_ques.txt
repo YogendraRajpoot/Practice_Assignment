@@ -1,8 +1,7 @@
 1. What is hoisting ?
 ANS:-
-
- * Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and execution phases) work in JavaScript.
- * JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+1. Hoisting was thought up as a general way of thinking about how execution contexts (specifically the creation and    execution phases) work in JavaScript.
+2. JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions,    variables or classes to the top of their scope, prior to execution of the code.
 
   Function hoisting
     => One of the advantages of hoisting is that it lets you use a function before you declare it in your code.
@@ -35,15 +34,15 @@ ANS:-
 2. What is scoping ?
 ANS:-
 
- * Scope determines the accessibility (visibility) of variables.
- *JavaScript has 3 types of scope:-
+ 1) Scope determines the accessibility (visibility) of variables.
+ 2) JavaScript has 3 types of scope:-
     1. Block scope
     2. Function scope
     3. Global scope
 
-  * "Before ES6 (2015), JavaScript had only Global Scope and Function Scope".
-  * "ES6 introduced two important new JavaScript keywords: let and const."
-  * "These two keywords provide Block Scope in JavaScript."
+ 3) "Before ES6 (2015), JavaScript had only Global Scope and Function Scope".
+ 4) "ES6 introduced two important new JavaScript keywords: let and const."
+ 5) "These two keywords provide Block Scope in JavaScript."
    Block Scope 
     => Variables declared inside a { } block cannot be accessed from outside the block:-
         {
@@ -51,7 +50,7 @@ ANS:-
         }
         // x can NOT be used here
 
-  * "Variables declared with the var keyword can NOT have block scope.
+  6) "Variables declared with the var keyword can NOT have block scope.
     Variables declared inside a { } block can be accessed from outside the block."
 
         {
@@ -59,7 +58,7 @@ ANS:-
         }
         // x CAN be used here
 
-  Local Scope 
+  a) Local Scope 
     => Variables declared within a JavaScript function, become LOCAL to the function.
 
         // code here can NOT use carName
@@ -71,11 +70,11 @@ ANS:-
 
         // code here can NOT use carName
 
- * "Local variables have Function Scope:
+ 7) "Local variables have Function Scope:
     They can only be accessed from within the function."
      Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
      Local variables are created when a function starts, and deleted when the function is completed.
- * Function Scope
+ 8) Function Scope
     => * "JavaScript has function scope: Each function creates a new scope."
        * "Variables defined inside a function are not accessible (visible)     from outside the function."
        * "Variables declared with var, let and const are quite similar when declared inside a function."
@@ -92,7 +91,7 @@ ANS:-
 
     "They all have Function Scope:"
 
- * Global Scope
+ b) Global Scope
     => * Variables declared Globally (outside any function) have Global Scope.
        * Global variables can be accessed from anywhere in a JavaScript program.
        * "Variables declared with var, let and const are quite similar when declared outside a block".
@@ -112,21 +111,21 @@ ANS:-
 3. How are var, let const different ?
 ANS:-
 
- * "Var" =>
+1. "Var" =>
 
     1. The scope of a var variable is functional scope.
     2. It can be updated and re-declared into the scope.
     3. It can be declared without initialization.
     4. It can be accessed without initialization as its default value is “undefined”.
 
- * "Let" =>
+2. "Let" =>
 
     1. The scope of a let variable is block scope.
     2. It can be updated but cannot be re-declared into the scope.
     3. It can be declared without initialization.
     4. It cannot be accessed without initialization, as it returns an error. It's in Temporal dead Zone .
 
- * "Const" =>
+3. "Const" =>
    
     1. The scope of a const variable is block scope.
     2. It cannot be updated or re-declared into the scope.
@@ -187,14 +186,37 @@ user.gfg2();
 
 
 5. Does Call apply bind work for arrow functions ?
-ANS:- ....
+ANS:- No, call apply bind doesnt work in arrow function, bcoz arrow function doesnt have this keyword.
 
 
 6. What does call apply bind do ?
-ANS:- ....
+ANS:- The call() method takes arguments separately. 
+      The apply() method takes arguments as an array.
+      The apply() method is very handy if you want to use an array instead of an argument list.
+	Example:
+	let name = {
+   	 first_name: "Siva",
+   	 last_name: "sangari",
+	}
+	let printFullName =  function(city,state) {
+    	console.log(`${this.first_name} ${this.last_name} is from ${city}, ${state}`);
+	}
+	printFullName.call(name, "Trichy", "TamilNadu");
+	printFullName.apply(name, ["Trichy", "TamilNadu"]);
+	
+	const store = printFullName.bind(name, "Trichy", "TamilNadu");
+	store()
 
 7. What are closures ?
-ANS:- ....
+ANS:-function along with its lexcial scope forms closure.The variable scope inside the parent function is maintained even if the function execution is completed.
+	function a() {
+	  let num = 1;
+	  function b() {
+	     console.log(num)
+	  }
+	  return b
+	}
+	a()()
 
 8. Write a program to debounce a search bar ?
 ANS:- ....
@@ -212,14 +234,23 @@ it should work in this manner
 ANS:- ....
 
 11. What is event bubbling ?
-ANS:- ....
+ANS:-  Event bubbling is a type of event propagation[1] where the
+       event first triggers on the innermost target element, and then
+       successively triggers on the ancestors (parents) of the target element
+       in the same nesting hierarchy till it reaches the outermost DOM
+       element or document object
 
 12. What is event loop ?
-ANS:- ....
+ANS:- Js is a synchronous, single threaded language. But there will be some kind of code which will take long time 
+to execute(example: fetching data). All the code are executed inside a call stack. So those code which takes time 
+will register a callback inside webAPI once it fetches data successfully it goes inside callback queue. The fetched 
+data will wait inside callbackqueue. The event looop will monitor callstack and callback queue, once callstack is 
+empty the event loop will push fetched data into call stack.
 
 13. Explain promises to a 5 year old, with simple examples ?
-ANS:- ....
-
+ANS:- Suppose your birthday is coming and your parents has promised to give you bicycle. On the birthday date his          promise will be either fulflilled or rejected. If he gets bicycle then promise is fulfilled, if not it was         rejected and there was some error. There is also finally which is regardless of fulfilled or rejected, you         will   get to cut the cake which is finally.
+  
+      Similarly, When there is a dependency b/w success and failure. The result is unknown i.e., it can be success       or failue. A promise is used to handle the asynchronous result of an operation. JavaScript is designed to not       wait for an asynchronous block of code to completely execute before other synchronous parts of the code can          run. With Promises, we can defer the execution of a code block until an async request is completed. 
 
 14. Write a function called sleep that will return a promise, if you do not provide a number to the function, then it will return an error and goto the catch block ?
 
@@ -229,31 +260,64 @@ sleep(500).then(res=> {
 .then(errr=>{
   console.log(err)
 })
-
+ANS:- ...
 
 15. what does async await mean ?
-ANS:- ....
+ANS:- An async function is a function declared with the async keyword, and the await keyword is permitted within it.
+      Async: It simply allows us to write promises based code as if it was synchronous and it checks that we are not       breaking the execution thread.The async keyword is used to define an asynchronous function, which returns a
+      AsyncFunction object. The await keyword is used to pause async function execution until a Promise is 
+      fulfilled, that is resolved or rejected, and to resume execution of the async function after fulfillment.
 
 
 16. What does the this keyword mean ?
-ANS:- ....
-
+ANS:-
+1. “This” keyword refers to an object that is executing the current piece of code. 
+2. It references the object that is executing the current function. 
+3. If the function being referenced is a regular function, “this” references the global object.
 
 17. What are classes? what are getters and setters ?
-ANS:- ....
+ANS:- 
+1. Classes are a template for creating objects. They encapsulate data with code to work on that data.
+2. Getters and setters are used to protect your data, particularly when creating classes. 
+3. For each instance variable, a getter method returns its value while a setter method sets or updates its value. 
+4. Given this, getters and setters are also known as accessors and mutators, respectively.
 
 18. How do you declare private and static variables in classes ?
-ANS:- ....
+ANS:- 
+1. Class variables, commonly known as static variables, are defined using the static keyword in a class but 
+   outside a method, constructor (default or parameterized), or block. 
+2. Private static variables are frequently utilized for constants.
 
 19. Create a Calculator class, it should be able to add, reduce multiply and divide. it should have a value getter, and that should return final output. keep the history of changes made as well, and keep that private, and a user should be able to see previous changes made to the value ?
 ANS:- ....
 
 20. What is currying ?
-ANS:- ....
+ANS:- 
+1. Currying is a technique of evaluating function with multiple arguments, into sequence of functions with single 
+   argument.
+2. In other words, when a function, instead of taking all arguments at one time, takes the first one and return a 
+   new function that takes the second one and returns a new function which takes the third one, and so forth, 
+   until all arguments have been fulfilled.
+3. Uses of currying function
+   A. It helps to avoid passing same variable again and again.
+   B. It is extremely useful in event handling. 
+4. For eg.
+        function Myfunction(a) {
+            return (b) => {
+                return (c) => {
+                    return a * b * c
+                }
+            }
+        }
+
+        Myfunction(1, 2, 3); // 6
 
 21. Write a program to flatten an array ?
 
 // input: [ 1, [ 2, 3 ], [ 3 ], [ [ [ 5]],  6]  ]
 // output => [ 1, 2, 3, 3, 5, 6 ] 
-ANS:- ....
+ANS:-
+const input = [1, [2, 3], [3], [[[5]], 6]];
+const output = input.flat(3);
+console.log(output)
 
