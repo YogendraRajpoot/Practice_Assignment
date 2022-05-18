@@ -268,7 +268,6 @@ ANS:- An async function is a function declared with the async keyword, and the a
       AsyncFunction object. The await keyword is used to pause async function execution until a Promise is 
       fulfilled, that is resolved or rejected, and to resume execution of the async function after fulfillment.
 
-
 16. What does the this keyword mean ?
 ANS:-
 1. “This” keyword refers to an object that is executing the current piece of code. 
