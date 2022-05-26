@@ -1,0 +1,182 @@
+# Q-1. Explain briefly what happens when you hit a url? explain DNS lookup
+Ans = 
+1. When a user open a browser and hits a url in the address bar, and presses enter the request for that particular
+   url is routed to a DNS resolver, which is typically managed by the user's Internet Service Provider.
+2. The DNS resolver for the ISP forwards the request for that url to a DNS root name server.
+3. The DNS resolver for the ISP forwards the request for that url again, this time to one of the TLD namer servers
+   for .com domains.
+4. The DNS resolver for the ISP chooses server and forwards the request for that url to that server.
+5. The server looks in the url hosted zone for that url record, gets the associated value, such as the IP 
+   address for a web server and returns to the DNS resolver.
+6. The DNS resolver for the ISP finally has the IP address that the user needs. The resolver returns that 
+   value to the web browser. The DNS resolver also caches (stores) the IP address for that url for an amount 
+   of time that you specify so that it can respond more quickly the next time someone browses to that url.
+7. The web browser sends a request for that url to the IP address that it got from the DNS resolver.
+8. The web server or other resources at IP returns the web page for that url to the web browser, and the web browser
+   displays the page.
+
+# Q-2. What is a URLs full form? Explain what a url is and the four parts it consists of The protocol in use The 
+hostname of the server The location of the file The arguments to the file?
+Ans = 
+1. Full for of URL is Uniform Resource Locator.
+2. A URL is a unique identifier used to locate a resource on the Internet. It is also referred to as a web address.
+3. A URL consist of four parts-
+     I. The Protocol or Scheme - The scheme identifies the protocol to be used to access the resource on the Internet.
+    II. Domain name or host - The host name identifies the host that holds the resource.
+   III. Path.
+    IV. Query string.
+
+# Q-3. What is HTTP protocol?
+Ans = 
+1. HTTP is a protocol for fetching resources such as HTML documents. 
+2. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means request 
+   are initiated by the recipient, usually the Web browser.
+3. A complete document is reconstructed from the different sub-documents fetched, for instance, text, images, 
+   videos, scripts and more.
+
+# Q-4. What is TCP Protocol?
+Ans = 
+1. TCP stands for Transmission Control Protocol.
+2. It is one of the main protocols of the Internet protocol suite. 
+3. It lies between the Application and Network Layers which are used in providing reliable delivery services. 
+4. It is a connection-oriented protocol for communications that helps in the exchange of messages between the 
+   different devices over a network.           
+
+# Q-5. Explain all the different HTTP methods?
+Ans =    
+1. GET = The GET method used to retrieve all the data from specific resource.
+2. POST = The POST method used to send the data to the specific resource.
+3. PUT = The PUT method used to replace(edit) the specific data in that specific resource.
+4. DELETE = The DELETE method used to remove the specific data in that specific resource.
+5. HEAD = The HEAD method asks for a response identical to a GET request, but without the response body.
+6. CONNECT = The CONNECT method establishes a tunnel to the server identified by the target resource.
+7. OPTIONS = The OPTIONS method describes the communication options for the target resource.
+8. TRACE = The TRACE method performs a message loop-back test along the path to the target resource.
+9. PATCH = The PATCH method applies partial modifications to a resource.
+
+# Q-6. What are HTTP headers?
+Ans = 
+1. HTTP headers let the client and the server pass additional information with an HTTP request or response.
+2. An HTTP headers consist of its case-insensitive name followed by a color, then by its value. 
+
+# Q-7. What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx?
+Ans = 
+1. The mostly used response codes are - 200, 201, 400, 401, 404, 500 etc.
+2. 200 (OK) - The 200 request used to show success.
+3. 201 (created) - 201 request used to show request succeeded, and new resource is created as a result which is 
+   typically used in PUT and POST method.
+4. 400 (Bad Request) - The server cannot or will not process the request due to something that is perceived to 
+   be a client error. 
+   (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).    
+5. 401 (Unauthorized) - Although the HTTP standard specifies "unauthorized", semantically this response means 
+   "unauthenticated". That is, the client must authenticate itself to get the requested response.   
+6. 404 (Not Found) - The server can not find the requested resource. In the browser, this means the URL is not recognized.   
+7. 500 (Internal Server Error) - The server has encountered a situation it does not know how to handle.
+
+# Q-8. What does cache control on http response mean?
+Ans = 
+1. Cache-control is an HTTP header used to specify browser caching policies in both client requests and server 
+   responses. 
+2. Policies include how a resource is cached, where it's cached and its maximum age before expiring.
+
+# Q-9. What is polling?
+Ans = 
+1. Polling, or polled operation, in computer science, refers to actively sampling the status of an external device 
+   by a client program as a synchronous activity. 
+2. Polling is most often used in terms of input/output (I/O), and is also referred to as polled I/O or software-driven I/O.
+
+# Q-10. What is long polling?
+Ans = long polling is a technique where the server elects to hold a client's connection open for as long as 
+      possible, delivering a response only after data becomes available or a timeout threshold.
+
+# Q-11. What are web sockets?
+Ans =        
+1. Web socket is bidirectional, a full duplex protocol that is used in the same scenario of the client-server 
+   communication, unlike HTTP. 
+2. It is a stateful protocol, which means the connection between client and server will keep alive until it is 
+terminated by either party (client or server).
+3. After closing the connection by either of the client and server, the connection is terminated from both ends.
+
+# Q-12. How is web sockets different from HTTP?
+Ans = 
+1. Web socket is a bidirectional communication where as HTTP is unidirectional communication.
+2. All real-time application services use web socket to receive the data on a single communication channel
+   whereas HTTP protocol is use in RESTful application which is stateless.
+3. Websocket is faster than HTTP connection.
+
+# Q-13. What is HTTPS?
+Ans = 
+1. HTTPS stands for Hypertext Transfer Protocol Secure.
+2. It is an extension of HTTP which is used to secure communication over a computer network.
+3. In HTTPS, communication protocol is encrypted using Transport Layer Security.   
+
+# Q-14. What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+Ans = 
+1. Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any 
+   origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. 
+2. CORS is use to check that the server will permit the actual request, where the browser sends headers that indicates
+   the HTTP method and headers that will be used in the actual request.
+
+# Q-15. What does Access-Control-Allow-Origin header do?
+Ans = Access-Control-Allow-Origin specifies either a single origin which tells browsers to allow that origin to 
+      access the resource; or else for requests without credentials, the wildcard tells browsers to allow any 
+      origin to access the resource.
+
+# Q-16. What is clickjacking? How do you fix it?
+Ans =       
+1. Clickjacking is an attack that fools users into thinking they are clicking on one thing when they are actually 
+   clicking on another.
+2. Clickjacking is caused due to allowing permission to a third party website to embed the vulnerable site using Iframe. 
+3. Disallowing this can be done by setting HTTP headers that direct browser to not allow the target website to be iframed.   
+4. X-Frame-Options - 
+    I. X-Frame-Options is a response header. Developers can use it to protect their site against clickjacking. 
+   II. It can be used to indicate whether or not a browser should be allowed to render a page in an Iframe.
+
+# Q-17. What are some performance metrics for your website?
+Ans = 
+1. Page Speed - Page speed is one of the most important metrics to be aware of, and it can have a far greater 
+   impact than you may even realize.
+2. Time to start render.
+3. DNS lookup speed.
+4. Request per second.
+5. Error rate.
+6. Conversion rate.
+
+# Q-18. What does the following term mean?
+1. Time to first byte
+2. Page load time 
+Ans =
+1. Time to first byte - 
+   I. Time to first byte (TTFB) is a metric for determining the responsiveness of a web server which is measures 
+      the amount of time between creating a connection to the server and downloading the contents of a web page.     
+2. Page load time - 
+   I. Page load time is the time it takes for a page to load, measured from navigation start to the start of the 
+      load event.
+          
+# Q-19. What do CDN or Content Delivery Networks do? When do you need a CDN?
+Ans =           
+1. A content delivery network (CDN) refers to a geographically distributed group of servers which work together 
+   to provide fast delivery of Internet content.
+2. A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, 
+   javascript files, stylesheets, images, and videos.   
+3. CDNs help to distribute bandwidth across multiple servers, instead of allowing one server to handle all traffic   
+
+# Q-20. What is the difference between Client Side Rendering and Server Side Rendering?
+Ans = Client-side rendering manages the routing dynamically without refreshing the page every time a user requests 
+      a different route but server-side rendering is able to display a fully populated page on the first load for 
+    any route of the website, whereas client-side rendering displays a blank page first.
+
+# Q-21. What is Progressive Rendering?
+Ans = Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server and 
+      streaming it to the client in parts without waiting for the whole page to rendered.
+
+# Q-22. What is the difference between Preloading and Pre-fetching resources?
+Ans = Preloading is an early fetch instruction to the browser to request a resource needed for a page 
+      (key scripts, Web Fonts, hero images) whereas Pre-fetch is a future navigation by the user 
+      (e.g between views or pages) where fetched resources and requests need to persist across navigation.
+
+# Q-23. What are service workers?
+Ans = 
+1. A service worker is a type of web worker. 
+2. It's essentially a JavaScript file that runs separately from the main browser thread, intercepting network 
+   requests, caching or retrieving resources from the cache, and delivering push messages.
